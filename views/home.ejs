@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pekerja</title>
+    <link rel ="stylesheet" href="/css/semantic.min.css">
+    <link rel ="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ui menu">
+            <div class="ui container">
+                <div class="ui secondary pointing menu">
+                    <a class="active item">Data Pegawai</a>
+                  </div>
+              </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="ui container">
+            <form action="/add" class="ui form" method="POST">
+                <div class="ui seven fields">
+                    <div class="field">
+                        <label for="namaPegawai" class="ui header blue">Masukkan Nama</label>
+                        <input type="text" name="namaPegawai" id="namaPegawai" placeholder="Nama Pegawai">
+                    </div>
+                    <div class="field">
+                        <label for="nip" class="ui header blue">Masukkan NIP</label>
+                        <input type="text" name="nip" id="nip" placeholder="NIP">
+                    </div>
+                    <div class="field">
+                        <label for="divisi" class="ui header blue">Masukkan Divisi</label>
+                        <input type="text" name="divisi" id="divisi" placeholder="Divisi">
+                    </div>
+                    <div class="field">
+                        <label for="alamat" class="ui header blue">Masukkan Alamat</label>
+                        <input type="text" name="alamat" id="alamat" placeholder="Alamat">
+                    </div>
+                    <div class="field">
+                        <label for="status" class="ui header blue">Masukkan Status</label>
+                        <input type="text" name="status" id="status" placeholder="Status">
+                    </div>
+                    <div class="field">
+                        <label for="durasiKerja" class="ui header blue">Masukkan Durasi Kerja</label>
+                        <input type="text" name="durasiKerja" id="durasiKerja" placeholder="Durasi Kerja">
+                    </div>
+                    <div class="field">
+                        <label for="gaji" class="ui header blue">Masukkan Gaji</label>
+                        <input type="text" name="gaji" id="gaji" placeholder="Gaji">
+                    </div>
+                </div>
+                <div class="ui fluid field">
+                    <input type="submit" value="Submit" class="ui button blue fluid">
+                </div>
+            </form>            
+            <br>
+            <br>
+            <table class="ui blue table">
+                <thead>
+                    <th>Nama Pegawai</th>
+                    <th>NIP</th>
+                    <th>Divisi</th>
+                    <th>Alamat</th>
+                    <th>Status</th>
+                    <th>Durasi Kerja</th>
+                    <th>Gaji</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Desi Ainul Amelia</td>
+                    <td>112336577849</td>
+                    <td>Marketing</td>
+                    <td>Tangerang</td>
+                    <td>Belum Nikah</td>
+                    <td>12 Jam</td>
+                    <td>Rp. 50.000.000</td>
+                    <td><a class="ui blue button"><i class="edit outline icon"></i></a></td>
+                    <td><a class="ui red button"><i class="minus icon"></i></a></td>
+                </tr>
+                <% pegawais.forEach((Pegawai)=>{ %>
+                    <tr>
+                        <td><%- Pegawai.namaPegawai %></td>
+                        <td><%- Pegawai.nip %></td>
+                        <td><%- Pegawai.divisi %></td>
+                        <td><%- Pegawai.alamat %></td>
+                        <td><%- Pegawai.status %></td>
+                        <td><%- Pegawai.durasiKerja %></td>
+                        <td><%- Pegawai.gaji %></td>
+                        <td><a class="ui blue button" href="/edit/<%= Pegawai._id %>"><i class="edit outline icon"></i></a></td>
+                    <td><a class="ui red button" href="/delete/<%= Pegawai._id %>"><i class="minus icon"></i></a></td>
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/js/semantic.min.js"></script>
+</body>
+</html>

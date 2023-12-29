@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pekerja</title>
+    <link rel ="stylesheet" href="/css/semantic.min.css">
+    <link rel ="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ui menu">
+            <div class="ui container">
+                <div class="ui secondary pointing menu">
+                    <a class="active item">Data Pegawai</a>
+                  </div>
+              </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="ui container">
+            <form action="/edit/<%- Pegawai._id%>" class="ui from" method="POST">
+                <div class="ui seven fields">
+                    <div class="field">
+                        <label for="Name" class="ui header blue">Masukkan Nama</label>
+                        <input type="text" name="namaPegawai" placeholder="Masukkan Nama" value="<%- Pegawai.namaPegawai %>" id="namaPegawai">
+                    </div>
+                    <div class="field">
+                        <label for="NIP" class="ui header blue">Masukan NIP</label>
+                        <input type="text" name="nip" placeholder="Masukkan NIP" value="<%- Pegawai.nip %>" id="nip">
+                    </div>
+                    <div class="field">
+                        <label for="Divisi" class="ui header blue">Masukkan Divisi</label>
+                        <input type="text" name="divisi" placeholder="Masukkan Divisi" value="<%- Pegawai.divisi %>" id="divisi">
+                    </div>
+                    <div class="field">
+                        <label for="Alamat" class="ui header blue">Masukkan Alamat</label>
+                        <input type="text" name="alamat" placeholder="Masukkan Alamat" value="<%- Pegawai.alamat %>" id="alamat">
+                    </div>
+                    <div class="field">
+                        <label for="Status" class="ui header blue">Masukkan Status</label>
+                        <input type="text" name="status" placeholder="Masukkan Status" value="<%- Pegawai.status %>" id="status">
+                    </div>
+                    <div class="field">
+                        <label for="Durasi Kerja" class="ui header blue">Masukan Durasi</label>
+                        <input type="text" name="durasiKerja" placeholder="Masukkan Durasi" value="<%- Pegawai.durasiKerja %>" id="durasiKerja">
+                    </div>
+                    <div class="field">
+                        <label for="Gaji" class="ui header blue">Masukkan Gaji</label>
+                        <input type="text" name="gaji" placeholder="Masukkan Gaji" value="<%- Pegawai.gaji %>" id="gaji">
+                    </div>
+                <div class="ui fluid field">
+                    <input type="submit" value="Submit" class="ui button blue fluid">
+                </div>
+            </form>
+            <br>
+            <br>
+        </div>
+    </div>
+    <script src="/js/semantic.min.js"></script>
+</body>
+</html>
